@@ -1,7 +1,7 @@
 {
-  "name": "organization-tuoen",
+  "name": "iMoney",
   "version": "1.0.0",
-  "description": "tuoen organization",
+  "description": "iMoney",
   "directories": {
     "doc": "docs",
     "test": "tests"
@@ -11,7 +11,7 @@
     "lint": "eslint src",
     "test": "make test",
     "start": "npm run dev:local",
-    "build": "cross-env NODE_ENV=production node build/webpack.release.js --uglify --deploy=online", 
+    "build": "cross-env NODE_ENV=production node build/webpack.release.js --uglify --deploy=online",
     "dev:local": "cross-env NODE_ENV=development node build/webpack.dev.js --hot"
   },
   "keywords": [
@@ -24,6 +24,7 @@
   "author": "tuoen",
   "license": "MIT",
   "devDependencies": {
+    "antd-mobile": "^1.0.3",
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.20.0",
     "babel-loader": "^6.2.9",
@@ -63,6 +64,7 @@
     "whatwg-fetch": "^2.0.1"
   },
   "dependencies": {
+    "antd-mobile": "^1.0.3",
     "react": "^15.2.1",
     "react-date-range": "^0.9.0",
     "react-dom": "^15.2.1",

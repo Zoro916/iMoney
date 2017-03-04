@@ -9,17 +9,17 @@ class App extends React.Component{
 	render(){
 		return(
 			<div id='ind_main'>
-				{this.props.children}	
+				{this.props.children}
 			</div>
 		)
 	}
 };
-// 
+//
 ReactDOM.render((
 	<Router history={hashHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Login}/>
 		</Route>
 	</Router>
-	),document.body
+),document.getElementById("root")
 );
