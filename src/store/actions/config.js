@@ -1,0 +1,15 @@
+export const USER_INFO = 'USER_INFO';
+export const LOGIN = 'LOGIN';
+export const REGISTER = 'REGISTER';
+export const CHANGEPWD = 'CHANGEPWD';
+
+export const HOME_COMMUNITY='HOME_COMMUNITY';
+
+export const MY_MEDICAL='MY_MEDICAL';
+export const MEDICAL_RECORDS='MEDICAL_RECORDS';
+export const DIEASES='DIEASES';
+
+
+export const HUIZHEN_RECORDS='HUIZHEN_RECORDS';
+
+export const DEFAULTDOCTORPATIENT ='DEFAULTDOCTORPATIENT';
