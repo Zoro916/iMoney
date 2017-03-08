@@ -4,6 +4,7 @@ import React,{ Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter,push,hashHistory} from 'react-router';
 import './login.less';
+import { Flex, WhiteSpace } from 'antd-mobile';
 export default class Login extends Component {
 	//创建属性
 	constructor(props){
@@ -11,8 +12,6 @@ export default class Login extends Component {
 	 	this.state={
 	 		userName:"",
 	 		userPassword:"",
-	 		unameHelp:"",
-	 		upwdHelp:""
 	 	}
 	 }
 	render(){
@@ -25,7 +24,7 @@ export default class Login extends Component {
 					    <main className="login-main">
 					      <div>
 					        <div className="title">
-					          <h3>欢迎使用爱存钱</h3>
+					          <h2>欢迎使用爱存钱</h2>
 					        </div>
 
 					        <div className="login-userinfo">
@@ -54,5 +53,3 @@ export default class Login extends Component {
 	  	 	);
 	  }
 };
-
-module.exports = Login;

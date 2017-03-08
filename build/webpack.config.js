@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var WebpackMd5Hash = require('webpack-md5-hash');
 var HashedModuleIdsPlugin = require('./HashedModuleIdsPlugin');
@@ -90,7 +91,9 @@ var config = {
   module: {},
   resolve: {
     root: SRC_PATH,
-    alias: alias
+    alias: alias,
+    extensions: ['', '.web.js', '.js', '.json'],
+    modulesDirectories: ['node_modules', path.join(__dirname, '../node_modules')]
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -144,7 +147,7 @@ var autoprefixer = require('autoprefixer');
 config.postcss = function() {
   return [precss, autoprefixer];
 }
-  
+
 // 图片路径处理，压缩
 config.module.loaders.push({
   test: /\.(?:jpg|gif|png|svg)$/,
