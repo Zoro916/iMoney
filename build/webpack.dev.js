@@ -1,7 +1,7 @@
   /**
  * node webpack.dev.js
  *        --hot         开启热更新
- *        --uglify      压缩 
+ *        --uglify      压缩
  *        --deploy      发布到测试环境，只发送 html 页面到服务器，js, css, img 等静态资源还是使用本地的，
  *        这样就可以在访问测试机时也可以照常使用热替换、自动刷新功能。
  *
@@ -17,7 +17,8 @@ var config = require('./webpack.config');
 var utils = require('./utils');
 
 var PORT = 3000;
-var HOST = utils.getIP();
+// var HOST = utils.getIP();
+var HOST = 'localhost';
 
 var args = process.argv;
 var hot = args.indexOf('--hot') > -1;
@@ -26,7 +27,7 @@ var deploy = args.indexOf('--deploy') > -1;
 // 本地环境静态资源路径
 var localPublicPath = 'http://' + HOST + ':' + PORT + '/';
 
-// config.output.publicPath = localPublicPath; 
+// config.output.publicPath = localPublicPath;
 config.entry.app.unshift('webpack-dev-server/client?' + localPublicPath)
 
 if (hot === true) {
@@ -71,7 +72,7 @@ var deploy = args.indexOf('--deploy') > -1;
 // 本地环境静态资源路径
 var localPublicPath = 'http://' + HOST + ':' + PORT + '/';
 
-config.output.publicPath = localPublicPath; 
+config.output.publicPath = localPublicPath;
 config.entry.app.unshift('webpack-dev-server/client?' + localPublicPath);
 
 // 开启热替换相关设置
@@ -87,10 +88,10 @@ if (deploy === true) {
   // config.plugins.push(
   //   new DeployPlugin({
   //     user: '',
-  //     password: '', 
-  //     host: '', 
+  //     password: '',
+  //     host: '',
   //     keepalive: 10000000
-  //   }, 
+  //   },
   //   [{reg: /html$/, to: '/xxx/xxx/xxx/app/views/'}])
   // );
 }

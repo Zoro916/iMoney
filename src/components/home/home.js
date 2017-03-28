@@ -2,7 +2,9 @@ import { updateFile, post } from 'global/utils/fetch.js';
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter,push,hashHistory} from 'react-router';
+import { sess, local, webStorage } from 'conf/webStorage.js';
 import './home.less';
+
 export default class Home extends Component {
   render(){
     return (

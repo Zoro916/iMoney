@@ -3,8 +3,13 @@ import { hex_md5 } from 'global/utils/CryptoMd5.js';
 import React,{ Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter,push,hashHistory} from 'react-router';
+import { sess, local, webStorage } from 'conf/webStorage.js';
 import './login.less';
 import { Flex, WhiteSpace } from 'antd-mobile';
+sess.set('key',123);
+local.set('key',321);
+webStorage.clear();
+console.log(webStorage.local.key);
 export default class Login extends Component {
 	//创建属性
 	constructor(props){

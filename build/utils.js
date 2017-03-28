@@ -20,7 +20,7 @@ exports.pickFiles = function(options) {
       }
     }
     return data;
-  }, {}); 
+  }, {});
 };
 
 exports.fullPath = function(dir) {
