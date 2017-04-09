@@ -1,11 +1,11 @@
 /**
   node webpack.release.js
      --watch         实时发布
-     --uglify        压缩 
+     --uglify        压缩
      --deploy=test   发布到测试环境，默认选项
      --deploy=online 发布到生产环境
 
-  NODE_ENV=production node build/webpack.release.js --watch --uglify --deploy=test 
+  NODE_ENV=production node build/webpack.release.js --watch --uglify --deploy=test
   NODE_ENV=production node build/webpack.release.js --watch --uglify --deploy=online
 */
 
@@ -22,9 +22,9 @@ var testPublicPath = '/';
 var onlinePublicPath = '/';
 
 if (online) {
-  config.output.publicPath = onlinePublicPath; 
+  config.output.publicPath = onlinePublicPath;
 } else {
-  config.output.publicPath = testPublicPath; 
+  config.output.publicPath = testPublicPath;
 }
 
 function callback(err, stats) {
@@ -35,7 +35,7 @@ function callback(err, stats) {
       colors: true,
       chunks: false,
       children: false,
-    }));  
+    }));
   }
 }
 compiler.run(callback);
@@ -55,9 +55,9 @@ var testPublicPath = '/';
 var onlinePublicPath = '/';
 
 if (online) {
-  config.output.publicPath = onlinePublicPath; 
+  config.output.publicPath = onlinePublicPath;
 } else {
-  config.output.publicPath = testPublicPath; 
+  config.output.publicPath = testPublicPath;
 }
 
 // config.plugins.push(new RenamePlugin());
@@ -72,7 +72,7 @@ function callback(err, stats) {
       colors: true,
       chunks: false,
       children: false,
-    }));  
+    }));
   }
 }
 

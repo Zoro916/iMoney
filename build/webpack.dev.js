@@ -18,7 +18,9 @@ var utils = require('./utils');
 
 var PORT = 3000;
 // var HOST = utils.getIP();
-var HOST = 'localhost';
+// var HOST = 'localhost';
+var HOST = 'localhost.charlesproxy.com';
+
 
 var args = process.argv;
 var hot = args.indexOf('--hot') > -1;

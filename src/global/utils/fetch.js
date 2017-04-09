@@ -9,19 +9,22 @@ import {
 
 import { hashHistory } from 'react-router';
 
-const URL = "http://192.168.1.240/api/";
-const UPLOADFILE = "http://192.168.1.240/file/upload"
+// const URL = "http://192.168.1.240/api/";
+// const UPLOADFILE = "http://192.168.1.240/file/upload"
 
 // const URL = "http://114.55.230.77/api/";
 // const UPLOADFILE = "http://114.55.230.77/file/upload"
 
-const PREFIX = "organization"
+const URL = "http://192.168.0.109:3000/api/";
+const UPLOADFILE = "http://192.168.1.240/file/upload"
+
+const PREFIX = "";
 
 /**
  * JavaScript内部对字符串是UTF-16编编码的,写了个utf16转8，
  * 然后再调sha1就行了
  * @param {String} str
- * @returns {String} 
+ * @returns {String}
  */
 function utf16to8(str) {
     var out, i, len, c;
@@ -133,7 +136,7 @@ function _post(method, args) {
         console.log(m, response)
         if(response.code==10008||response.code==10009){
             hashHistory.push('/')
-        }        
+        }
         return response;
     }).catch(function (ex) {
         console.log('parsing failed', ex)
@@ -158,8 +161,8 @@ function _updateFile(file,storeType,fileName) {
     let form = document.createElement('form');
     let formData=new FormData(form);
 
-    formData.append("upload_file",file,fileName); 
-  
+    formData.append("upload_file",file,fileName);
+
     if (auth_token && auth_token !== undefined && auth_token !== 'undefined') {
         formData.append('auth_token',auth_token)
     }
